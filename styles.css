@@ -94,6 +94,12 @@ h4 {
     margin-bottom: 0;
 }
 
+.first-big-letter::first-letter{
+    font-size: 2.5rem;
+    color: #01244e;
+    font-family:'Times New Roman', Times, serif;
+}
+
 .nav-brand a {
     text-decoration: none;
 }
