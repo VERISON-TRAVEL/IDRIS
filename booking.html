@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Idriss Bourenane Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="index.html">Idriss Bourenane Travel</a></h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="programs.html" class="nav-link">Programs</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <section class="booking-header">
+        <div class="container">
+            <div class="booking-header-content">
+                <button class="back-btn" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <h1>Complete Your Booking</h1>
+                <p>Fill in the details to confirm your reservation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-form-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <h3>Booking Summary</h3>
+                    <div class="selected-package" id="selectedPackage">
+                        <!-- Package details will be populated by JavaScript -->
+                    </div>
+                    <div class="price-breakdown">
+                        <div class="price-item">
+                            <span>Base Price:</span>
+                            <span id="basePrice">$0</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Additional Services:</span>
+                            <span id="additionalServices">$0</span>
+                        </div>
+                        <div class="price-item total">
+                            <span>Total:</span>
+                            <span id="totalPrice">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-section">
+                            <h4><i class="fas fa-calendar"></i> Travel Details</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="departureDate">Departure Date *</label>
+                                    <input type="date" id="departureDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="returnDate">Return Date</label>
+                                    <input type="date" id="returnDate">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="roomType">Room Type *</label>
+                                    <select id="roomType" required>
+                                        <option value="">Select Room Type</option>
+                                        <option value="single">Single Room</option>
+                                        <option value="double">Double Room</option>
+                                        <option value="triple">Triple Room</option>
+                                        <option value="suite">Suite</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="transportation">Transportation</label>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="transportation" value="included">
+                                        <label for="transportation">Include Transportation (+$150)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4><i class="fas fa-users"></i> Travelers</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">Number of Adults *</label>
+                                    <select id="adults" required onchange="updateTravelerForms()">
+                                        <option value="">Select</option>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                        <option value="4">4 Adults</option>
+                                        <option value="5">5 Adults</option>
+                                        <option value="6">6+ Adults</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">Number of Children</label>
+                                    <select id="children" onchange="updateTravelerForms()">
+                                        <option value="0">0 Children</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4+ Children</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section" id="travelerDetails">
+                            <h4><i class="fas fa-user"></i> Traveler Information</h4>
+                            <div id="travelerForms">
+                                <!-- Traveler forms will be generated dynamically -->
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4><i class="fas fa-user"></i> Contact Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Full Name *</label>
+                                    <input type="text" id="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email *</label>
+                                    <input type="email" id="contactEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactPhone">Phone Number *</label>
+                                    <input type="tel" id="contactPhone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emergencyContact">Emergency Contact</label>
+                                    <input type="tel" id="emergencyContact">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4><i class="fas fa-comment"></i> Special Requests</h4>
+                            <div class="form-group">
+                                <label for="specialRequests">Additional Comments or Requests</label>
+                                <textarea id="specialRequests" rows="4" placeholder="Any special dietary requirements, accessibility needs, or other requests..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-check"></i> Confirm Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Idriss Bourenane Travel</h3>
+                    <p>Creating unforgettable journeys and memories that last a lifetime.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +213 555 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@idrissravel.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Idriss Bourenane Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>

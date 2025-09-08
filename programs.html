@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Programs - Idriss Bourenane Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="index.html">Idriss Bourenane Travel</a></h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="programs.html" class="nav-link active">Programs</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Programs Hero -->
+    <section class="programs-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="programs-hero-content">
+                <h1>Travel Programs</h1>
+                <p>Choose from our carefully curated selection of travel experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Categories -->
+    <section class="programs-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Travel Categories</h2>
+                <p>Discover amazing destinations tailored to your preferences</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" onclick="openCategory('national')">
+                    <div class="category-image">
+                        <img src="national.png" alt="National Tours">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>National Tours</h3>
+                        <p>Explore the beauty of Algeria with our domestic travel packages featuring stunning landscapes, historical sites, and cultural experiences.</p>
+                        <div class="category-features">
+                            <span class="feature-tag">Cultural Sites</span>
+                            <span class="feature-tag">Natural Beauty</span>
+                            <span class="feature-tag">Local Cuisine</span>
+                        </div>
+                        <button class="btn btn-outline">Explore Destinations</button>
+                    </div>
+                </div>
+
+                <div class="category-card" onclick="openCategory('international')">
+                    <div class="category-image">
+                        <img src="international.png" alt="International Tours">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>International Tours</h3>
+                        <p>Discover the world with our international packages to Europe, Asia, Africa, and beyond. Experience diverse cultures and breathtaking destinations.</p>
+                        <div class="category-features">
+                            <span class="feature-tag">World Destinations</span>
+                            <span class="feature-tag">Cultural Exchange</span>
+                            <span class="feature-tag">Adventure</span>
+                        </div>
+                        <button class="btn btn-outline">Explore Destinations</button>
+                    </div>
+                </div>
+
+                <div class="category-card" onclick="openCategory('omra')">
+                    <div class="category-image">
+                        <img src="mecca.png" alt="Omra Packages">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">
+                            <i class="fas fa-kaaba"></i>
+                        </div>
+                        <h3>Omra Packages</h3>
+                        <p>Sacred journeys to the holy cities of Mecca and Medina. Our comprehensive Omra packages include accommodation, transportation, and guidance.</p>
+                        <div class="category-features">
+                            <span class="feature-tag">Spiritual Journey</span>
+                            <span class="feature-tag">Expert Guidance</span>
+                            <span class="feature-tag">Complete Care</span>
+                        </div>
+                        <button class="btn btn-outline">Explore Packages</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Programs -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Programs</h2>
+                <p>Excellence in every detail of your journey</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Premium Quality</h4>
+                    <p>Carefully selected accommodations and services</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Expert Guides</h4>
+                    <p>Professional and knowledgeable tour guides</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Safety First</h4>
+                    <p>Your safety and security are our top priority</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h4>Best Value</h4>
+                    <p>Competitive prices with exceptional value</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Idriss Bourenane Travel</h3>
+                    <p>Creating unforgettable journeys and memories that last a lifetime.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +213 555 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@idrissravel.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Idriss Bourenane Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Selected Programs</h3>
+                <button class="close-cart" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: $<span id="cartTotal">0</span></span>
+                </div>
+                <button class="btn btn-primary" onclick="proceedToBooking()">Proceed to Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
