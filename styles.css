@@ -40,7 +40,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'tahoma' sans-serif;
+    font-family: 'tahoma', sans-serif;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -95,9 +95,8 @@ h4 {
 }
 
 .first-big-letter::first-letter{
-    font-size: 2.5rem;
     color: #01244e;
-    font-family:'Times New Roman', Times, serif;
+   
 }
 
 .nav-brand a {
